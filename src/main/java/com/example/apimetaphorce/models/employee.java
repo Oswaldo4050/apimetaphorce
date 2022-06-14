@@ -26,9 +26,9 @@ public class employee {
     private String email;
 
     @Column(nullable = false)
-    private int phonenumber;
+    private Long phonenumber;
  
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "contracttype")
     private contracttype contracttype;
 
@@ -75,10 +75,10 @@ public class employee {
     }
 
     //Celular
-    public int getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phonenumber;
     }
-    public void setPhoneNumber(int phonenumber) {
+    public void setPhoneNumber(Long phonenumber) {
         this.phonenumber = phonenumber;
     }
 
