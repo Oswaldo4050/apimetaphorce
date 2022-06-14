@@ -29,7 +29,7 @@ public class employee {
     private int phonenumber;
  
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idContrat")
+    @JoinColumn(name = "contracttype")
     private contracttype contracttype;
 
     @Column(nullable = false)
