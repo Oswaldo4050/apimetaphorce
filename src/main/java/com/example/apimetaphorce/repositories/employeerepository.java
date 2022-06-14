@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface employeerepository extends CrudRepository<employee, Long> {
     //public abstract ArrayList<employee> 
-
+    public abstract ArrayList<employee> findById(Integer Id);
 }

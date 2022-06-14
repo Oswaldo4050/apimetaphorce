@@ -22,4 +22,8 @@ public class employeeservice {
     public employee postEmployee(employee employee){
         return employeeRepository.save(employee);
     }
+
+    public Optional<employee> GetById(Long id){
+        return employeeRepository.findById(id);
+    }
 }
