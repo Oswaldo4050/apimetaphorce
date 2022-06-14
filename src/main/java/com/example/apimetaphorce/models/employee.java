@@ -1,4 +1,4 @@
-/*package com.example.apimetaphorce.models;
+package com.example.apimetaphorce.models;
 
 import java.util.Date;
 
@@ -12,12 +12,28 @@ public class employee {
     @Column(unique = true, nullable = false)
     
     private Long idEmployee;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String lastname;
+
+    @Column(nullable = false)
     private String birthday;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private int phonenumber;
  
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idContrat")
+    private contracttype contracttype;
+
+    @Column(nullable = false)
+    private boolean active; 
     // ID 
     public Long getId() {
         return idEmployee;
@@ -65,4 +81,20 @@ public class employee {
     public void setPhoneNumber(int phonenumber) {
         this.phonenumber = phonenumber;
     }
-}*/
+
+      //Contrato
+    public contracttype getContracttype() {
+        return contracttype;
+    }
+    public void setContracttype(contracttype contract) {
+        this.contracttype = contract;
+    }
+
+    //activo
+    public boolean getActive() {
+        return active;
+    }
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+}
